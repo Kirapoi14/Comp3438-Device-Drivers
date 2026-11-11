@@ -92,12 +92,12 @@ static int __init my_init(void) {
     minor = MINOR(dev_no);
     printk("Device " DEVICE_NAME " inistialized with major = %d, minor_start = %d.\n", major, minor);
 
-    cdev_init(&my_cdev, &fop);
+    cdev_init(&my_cdev, &fop); // Initialize cdev, bind fop to it
     my_cdev.owner = THIS_MODULE;
     my_cdev.dev = dev_no;
     my_cdev.count = N_D;
 
-    ret = cdev_add(&my_cdev, dev_no, N_D);
+    ret = cdev_add(&my_cdev, dev_no, N_D); // Register my_cdev with the kernel, the device number (major, minor) can be routed to the functions in fop.
     if (ret) {
         printk("Device " DEVICE_NAME " register fail.\n");
         return -1;
