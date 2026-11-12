@@ -1,5 +1,5 @@
 # Comp3438-Device-Drivers
-Just for storing www.
+Just for the archive www.
 
 Maybe someday I will update the procedures for operating device drivers if I have spare time.
 
