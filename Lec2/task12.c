@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void main(int argc, char * argv[]) {
+void main(int argc, char **argv) {
     int i;
     pid_t childpid, sid;
     i = 0;
